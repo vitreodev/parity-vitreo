@@ -42,6 +42,11 @@ fn load_machine(b: &[u8]) -> EthereumMachine {
 	Spec::load_machine(b).expect("chain spec is invalid")
 }
 
+/// Create a new Vitreo mainnet chain spec.
+pub fn new_vitreo<'a, T: Into<SpecParams<'a>>>(params: T) -> Spec {
+	load(params.into(), include_bytes!("../../res/ethereum/vitreo.json"))
+}
+
 /// Create a new Foundation mainnet chain spec.
 pub fn new_foundation<'a, T: Into<SpecParams<'a>>>(params: T) -> Spec {
 	load(params.into(), include_bytes!("../../res/ethereum/foundation.json"))

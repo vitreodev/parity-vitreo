@@ -1,13 +1,13 @@
 ![Parity Ethereum](docs/logo-parity-ethereum.svg)
 
-<h2 align="center">The Fastest and most Advanced Ethereum Client.</h2>
+<h2 align="center">The Fastest and most Advanced Vitreo Client.</h2>
 
-<p align="center"><strong><a href="https://github.com/paritytech/parity-ethereum/releases/latest">» Download the latest release «</a></strong></p>
+<p align="center"><strong><a href="https://github.com/vitreodev/parity-vitreo/releases/latest">» Download the latest release «</a></strong></p>
 
 <p align="center"><a href="https://gitlab.parity.io/parity/parity-ethereum/commits/master" target="_blank"><img src="https://gitlab.parity.io/parity/parity-ethereum/badges/master/build.svg" /></a>
 <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank"><img src="https://img.shields.io/badge/license-GPL%20v3-green.svg" /></a></p>
 
-**Built for mission-critical use**: Miners, service providers, and exchanges need fast synchronisation and maximum uptime. Parity Ethereum provides the core infrastructure essential for speedy and reliable services.
+**Parity-Vitreo is Ported from Parity Technologies' Parity-Ethereum Codebase with the following features**:
 
 - Clean, modular codebase for easy customisation
 - Advanced CLI-based client
@@ -17,17 +17,17 @@
 
 ## Technical Overview
 
-Parity Ethereum's goal is to be the fastest, lightest, and most secure Ethereum client. We are developing Parity Ethereum using the sophisticated and cutting-edge **Rust programming language**. Parity Ethereum is licensed under the GPLv3 and can be used for all your Ethereum needs.
+Parity Vitreo's goal is to be the fastest, lightest, and most secure Vitreo client. We are developing Parity Vitreo using the sophisticated and cutting-edge **Rust programming language**. Parity Vitreo is licensed under the GPLv3 and can be used for all your Vitreo needs.
 
-By default, Parity Ethereum runs a JSON-RPC HTTP server on port `:8545` and a Web-Sockets server on port `:8546`. This is fully configurable and supports a number of APIs.
+By default, Parity Vitreo runs a JSON-RPC HTTP server on port `:8545` and a Web-Sockets server on port `:8546`. This is fully configurable and supports a number of APIs.
 
-If you run into problems while using Parity Ethereum, check out the [wiki for documentation](https://wiki.parity.io/), feel free to [file an issue in this repository](https://github.com/paritytech/parity-ethereum/issues/new), or hop on our [Gitter](https://gitter.im/paritytech/parity) or [Riot](https://riot.im/app/#/group/+parity:matrix.parity.io) chat room to ask a question. We are glad to help! **For security-critical issues**, please refer to the security policy outlined in [SECURITY.md](SECURITY.md).
+If you run into problems while using Parity Vitreo, check out the [wiki for documentation](https://wiki.parity.io/), feel free to [file an issue in this repository](https://github.com/paritytech/parity-ethereum/issues/new), or hop on our [Gitter](https://gitter.im/paritytech/parity) or [Riot](https://riot.im/app/#/group/+parity:matrix.parity.io) chat room to ask a question. We are glad to help! **For security-critical issues**, please refer to the security policy outlined in [SECURITY.md](SECURITY.md).
 
-Parity Ethereum's current beta-release is 2.1. You can download it at [the releases page](https://github.com/paritytech/parity-ethereum/releases) or follow the instructions below to build from source. Please, mind the [CHANGELOG.md](CHANGELOG.md) for a list of all changes between different versions.
+Parity Vitreo's current beta-release is 0.1. You can download it at [the releases page](https://github.com/paritytech/parity-ethereum/releases) or follow the instructions below to build from source. Please, mind the [CHANGELOG.md](CHANGELOG.md) for a list of all changes between different versions.
 
 ## Build Dependencies
 
-Parity Ethereum requires **latest stable Rust version** to build.
+Parity Vitreo requires **latest stable Rust version** to build.
 
 We recommend installing Rust through [rustup](https://www.rustup.rs/). If you don't already have `rustup`, you can install it like this:
 
@@ -36,7 +36,11 @@ We recommend installing Rust through [rustup](https://www.rustup.rs/). If you do
   $ curl https://sh.rustup.rs -sSf | sh
   ```
 
-  Parity Ethereum also requires `gcc`, `g++`, `libudev-dev`, `pkg-config`, `file`, `make`, and `cmake` packages to be installed.
+  Parity Vitreo also requires `cargo`, `perl`, `yasm`, `gcc`, `g++`, `libudev-dev`, `pkg-config`, `file`, `make`, and `cmake` packages to be installed. On Ubuntu they can be installed with a single line:
+	
+  ```bash
+  $ apt-get install cargo perl yasm gcc g++ libudev-dev pkg-config file make cmake
+  ```
 
 - OSX:
   ```bash
@@ -61,9 +65,9 @@ Make sure that these binaries are in your `PATH`. After that, you should be able
 ## Build from Source Code
 
 ```bash
-# download Parity Ethereum code
-$ git clone https://github.com/paritytech/parity-ethereum
-$ cd parity-ethereum
+# Download Parity Vitreo code
+$ git clone https://github.com/vitreodev/parity-vitreo
+$ cd parity-vitreo
 
 # build in release mode
 $ cargo build --release --features final
@@ -107,21 +111,21 @@ The one-line installer always defaults to the latest beta release. To install a 
 bash <(curl https://get.parity.io -L) -r stable
 ```
 
-## Start Parity Ethereum
+## Start Parity Vitreo
 
 ### Manually
 
-To start Parity Ethereum manually, just run
+To start Parity Vitreo manually, just run
 
 ```bash
 $ ./target/release/parity
 ```
 
-so Parity Ethereum begins syncing the Ethereum blockchain.
+so Parity Vitreo begins syncing the Vitreo blockchain.
 
 ### Using `systemd` service file
 
-To start Parity Ethereum as a regular user using `systemd` init:
+To start Parity Vitreo as a regular user using `systemd` init:
 
 1. Copy `./scripts/parity.service` to your
 `systemd` user directory (usually `~/.config/systemd/user`).
@@ -129,27 +133,10 @@ To start Parity Ethereum as a regular user using `systemd` init:
 
 ## Parity Ethereum toolchain
 
-In addition to the Parity Ethereum client, there are additional tools in this repository available:
+In addition to the Parity Vitreo client, there are additional tools in this repository available:
 
 - [evmbin](https://github.com/paritytech/parity-ethereum/blob/master/evmbin/) - EVM implementation for Parity Ethereum.
 - [ethabi](https://github.com/paritytech/ethabi) - Parity Ethereum function calls encoding.
 - [ethstore](https://github.com/paritytech/parity-ethereum/blob/master/ethstore/) - Parity Ethereum key management.
 - [ethkey](https://github.com/paritytech/parity-ethereum/blob/master/ethkey/) - Parity Ethereum keys generator.
 - [whisper](https://github.com/paritytech/parity-ethereum/blob/master/whisper/) - Implementation of Whisper-v2 PoC.
-
-## Join the chat!
-
-Questions? Get in touch with us on Gitter:
-[![Gitter: Parity](https://img.shields.io/badge/gitter-parity-4AB495.svg)](https://gitter.im/paritytech/parity)
-[![Gitter: Parity.js](https://img.shields.io/badge/gitter-parity.js-4AB495.svg)](https://gitter.im/paritytech/parity.js)
-[![Gitter: Parity/Miners](https://img.shields.io/badge/gitter-parity/miners-4AB495.svg)](https://gitter.im/paritytech/parity/miners)
-[![Gitter: Parity-PoA](https://img.shields.io/badge/gitter-parity--poa-4AB495.svg)](https://gitter.im/paritytech/parity-poa)
-
-Alternatively, join our community on Matrix:
-[![Riot: +Parity](https://img.shields.io/badge/riot-%2Bparity%3Amatrix.parity.io-orange.svg)](https://riot.im/app/#/group/+parity:matrix.parity.io)
-
-## Documentation
-
-Official website: https://parity.io
-
-Be sure to [check out our wiki](https://wiki.parity.io) for more information.

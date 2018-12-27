@@ -31,6 +31,7 @@ use user_defaults::UserDefaults;
 
 #[derive(Debug, PartialEq)]
 pub enum SpecType {
+	Vitreo,
 	Foundation,
 	Classic,
 	Poanet,
@@ -52,7 +53,7 @@ pub enum SpecType {
 
 impl Default for SpecType {
 	fn default() -> Self {
-		SpecType::Foundation
+		SpecType::Vitreo
 	}
 }
 
@@ -61,6 +62,7 @@ impl str::FromStr for SpecType {
 
 	fn from_str(s: &str) -> Result<Self, Self::Err> {
 		let spec = match s {
+			"vitreo" => SpecType::Vitreo,
 			"ethereum" | "frontier" | "homestead" | "byzantium" | "foundation" | "mainnet" => SpecType::Foundation,
 			"classic" | "frontier-dogmatic" | "homestead-dogmatic" => SpecType::Classic,
 			"poanet" | "poacore" => SpecType::Poanet,
@@ -86,6 +88,7 @@ impl str::FromStr for SpecType {
 impl fmt::Display for SpecType {
 	fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
 		f.write_str(match *self {
+			SpecType::Foundation => "vitreo",
 			SpecType::Foundation => "foundation",
 			SpecType::Classic => "classic",
 			SpecType::Poanet => "poanet",
@@ -111,6 +114,7 @@ impl SpecType {
 	pub fn spec<'a, T: Into<SpecParams<'a>>>(&self, params: T) -> Result<Spec, String> {
 		let params = params.into();
 		match *self {
+			SpecType::Vitreo => Ok(ethereum::new_vitreo(params)),
 			SpecType::Foundation => Ok(ethereum::new_foundation(params)),
 			SpecType::Classic => Ok(ethereum::new_classic(params)),
 			SpecType::Poanet => Ok(ethereum::new_poanet(params)),
@@ -357,6 +361,7 @@ mod tests {
 
 	#[test]
 	fn test_spec_type_parsing() {
+		assert_eq!(SpecType::Vitreo, "vitreo".parse().unwrap());
 		assert_eq!(SpecType::Foundation, "foundation".parse().unwrap());
 		assert_eq!(SpecType::Foundation, "frontier".parse().unwrap());
 		assert_eq!(SpecType::Foundation, "homestead".parse().unwrap());
@@ -387,11 +392,12 @@ mod tests {
 
 	#[test]
 	fn test_spec_type_default() {
-		assert_eq!(SpecType::Foundation, SpecType::default());
+		assert_eq!(SpecType::Vitreo, SpecType::default());
 	}
 
 	#[test]
 	fn test_spec_type_display() {
+		assert_eq!(format!("{}", SpecType::Vitreo), "vitreo");
 		assert_eq!(format!("{}", SpecType::Foundation), "foundation");
 		assert_eq!(format!("{}", SpecType::Classic), "classic");
 		assert_eq!(format!("{}", SpecType::Poanet), "poanet");

@@ -7,4 +7,4 @@ The full list of changes:
 2.  Added parity-vitreo chain specification file at `vitreo.json` `/parity-vitreo/ethcore/res/ethereum/vitreo.json`.
 3.  Added Vitreo mainnet chain specification public function at `/parity-vitreo_00/ethcore/src/ethereum/mod.r:45`.
 4.  Added Vitreo mainnet paramaters to `/parity-vitreo/parity/params.rs: 34, 56, 65, 91, 117, 364, 395, 400`.
-5.  Added `vitreo` to chain options and made it the default at `/parity-vitreo/parity/cli/mod.rs: 289`.
+5.  Added `vitreo` to chain options making it the default at `/parity-vitreo/parity/cli/mod.rs: 289`.

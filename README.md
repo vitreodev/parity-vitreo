@@ -17,13 +17,9 @@
 
 ## Technical Overview
 
-Parity Vitreo's goal is to be the fastest, lightest, and most secure Vitreo client. We are developing Parity Vitreo using the sophisticated and cutting-edge **Rust programming language**. Parity Vitreo is licensed under the GPLv3 and can be used for all your Vitreo needs.
-
 By default, Parity Vitreo runs a JSON-RPC HTTP server on port `:8545` and a Web-Sockets server on port `:8546`. This is fully configurable and supports a number of APIs.
 
-If you run into problems while using Parity Vitreo, check out the [wiki for documentation](https://wiki.parity.io/), feel free to [file an issue in this repository](https://github.com/paritytech/parity-ethereum/issues/new), or hop on our [Gitter](https://gitter.im/paritytech/parity) or [Riot](https://riot.im/app/#/group/+parity:matrix.parity.io) chat room to ask a question. We are glad to help! **For security-critical issues**, please refer to the security policy outlined in [SECURITY.md](SECURITY.md).
-
-Parity Vitreo's current beta-release is 0.1. You can download it at [the releases page](https://github.com/paritytech/parity-ethereum/releases) or follow the instructions below to build from source. Please, mind the [CHANGELOG.md](CHANGELOG.md) for a list of all changes between different versions.
+Parity Vitreo's current beta-release is 0.1. You can build from source following the instructions below. Please, review the [CHANGELOG.md](CHANGELOG.md) for a list of all changes between different versions.
 
 ## Build Dependencies
 
@@ -36,7 +32,7 @@ We recommend installing Rust through [rustup](https://www.rustup.rs/). If you do
   $ curl https://sh.rustup.rs -sSf | sh
   ```
 
-  Parity Vitreo also requires `cargo`, `perl`, `yasm`, `gcc`, `g++`, `libudev-dev`, `pkg-config`, `file`, `make`, and `cmake` packages to be installed. On Ubuntu they can be installed with a single line:
+  Parity Vitreo also requires `cargo`, `perl`, `yasm`, `gcc`, `g++`, `libudev-dev`, `pkg-config`, `file`, `make`, and `cmake` packages to be installed. They can be installed with a single line:
 	
   ```bash
   $ apt-get install cargo perl yasm gcc g++ libudev-dev pkg-config file make cmake
@@ -55,12 +51,11 @@ We recommend installing Rust through [rustup](https://www.rustup.rs/). If you do
   ```bash
   $ rustup default stable-x86_64-pc-windows-msvc
   ```
+  Once you have `rustup` installed, then you need to install:
+  * [Perl](https://www.perl.org)
+  * [Yasm](https://yasm.tortall.net)
 
-Once you have `rustup` installed, then you need to install:
-* [Perl](https://www.perl.org)
-* [Yasm](https://yasm.tortall.net)
-
-Make sure that these binaries are in your `PATH`. After that, you should be able to build Parity Ethereum from source.
+Make sure that these binaries are in your `PATH`. After that, you should be able to build Parity Vitreo from source.
 
 ## Build from Source Code
 
@@ -68,7 +63,8 @@ Make sure that these binaries are in your `PATH`. After that, you should be able
 # Download Parity Vitreo code
 $ git clone https://github.com/vitreodev/parity-vitreo
 $ cd parity-vitreo
-
+```
+```bash
 # build in release mode
 $ cargo build --release --features final
 ```
@@ -98,19 +94,6 @@ or
 ```bash
 $ git checkout beta
 ```
-
-## Simple One-Line Installer for Mac and Linux
-
-```bash
-bash <(curl https://get.parity.io -L)
-```
-
-The one-line installer always defaults to the latest beta release. To install a stable release, run:
-
-```bash
-bash <(curl https://get.parity.io -L) -r stable
-```
-
 ## Start Parity Vitreo
 
 ### Manually
@@ -121,7 +104,7 @@ To start Parity Vitreo manually, just run
 $ ./target/release/parity
 ```
 
-so Parity Vitreo begins syncing the Vitreo blockchain.
+Then Parity Vitreo begins syncing the Vitreo blockchain.
 
 ### Using `systemd` service file
 
@@ -129,9 +112,9 @@ To start Parity Vitreo as a regular user using `systemd` init:
 
 1. Copy `./scripts/parity.service` to your
 `systemd` user directory (usually `~/.config/systemd/user`).
-2. To configure Parity Ethereum, write a `/etc/parity/config.toml` config file, see [Configuring Parity Ethereum](https://paritytech.github.io/wiki/Configuring-Parity) for details.
+2. To configure Parity Vitreo, write a `/etc/parity/config.toml` config file, see [Configuring Parity Ethereum](https://paritytech.github.io/wiki/Configuring-Parity) for details.
 
-## Parity Ethereum toolchain
+## Parity Vitreo toolchain
 
 In addition to the Parity Vitreo client, there are additional tools in this repository available:
 

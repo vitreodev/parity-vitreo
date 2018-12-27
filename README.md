@@ -36,7 +36,11 @@ We recommend installing Rust through [rustup](https://www.rustup.rs/). If you do
   $ curl https://sh.rustup.rs -sSf | sh
   ```
 
-  Parity Ethereum also requires `gcc`, `g++`, `libudev-dev`, `pkg-config`, `file`, `make`, and `cmake` packages to be installed.
+  Parity Ethereum also requires `cargo`, `perl`, `yasm`, `gcc`, `g++`, `libudev-dev`, `pkg-config`, `file`, `make`, and `cmake` packages to be installed. On Ubuntu they can be installed with a single line:
+	
+	```bash
+  $ apt-get install cargo perl yasm gcc g++ libudev-dev pkg-config file make cmake
+  ```
 
 - OSX:
   ```bash

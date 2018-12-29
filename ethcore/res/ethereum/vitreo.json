@@ -21,7 +21,7 @@
 		}
 	},
 	"params": {
-		"networkID": "0x22F920",
+		"networkID": "0x22F921",
 		"chainID": "0x0",
 		"maximumExtraDataSize": "0x20",
 		"gasLimitBoundDivisor": "0x0400",
@@ -53,9 +53,6 @@
 		"extraData": "0x77656c636f6d65746f7468656c696e6b6564776f726c64000000000000000000"
 	},
 	"nodes": [
-		"enode://c9859ac451467daad2b23431f43e515baf50710ab8ce6aba0303848d412b817d808ee8ac4b4ea8e851b87e7607ebfeb4147e29db90b23cdb83526eb3748fd03a@104.237.138.111:30303",
-		"enode://f65fdd7bf14b8176e1cfea770b6c181230aa1db7e1c4c6f379f5b36d009ec994ce3172f1d7df3d0ab2d7c6df87e4bc4abcd76a4eb371a7c6e55a51e8143684a1@45.79.14.31:30303",
-		"enode://f135f980c0c62ec4b271f6e1839fac8684f7b1504d8241c9480bdf316e8f6fd456fe84dd5c3ecae6eb1fcc29d1789e6a313378d7b3771aa3af0e289f41dc40db@45.79.14.31:30303"
 	],
 	"accounts": {
 		"0000000000000000000000000000000000000001": { "builtin": { "name": "ecrecover", "pricing": { "linear": { "base": 3000, "word": 0 } } } },

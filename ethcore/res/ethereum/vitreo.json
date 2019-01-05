@@ -21,7 +21,7 @@
 		}
 	},
 	"params": {
-		"networkID": "0x22F921",
+		"networkID": "0x22F920",
 		"chainID": "0x0",
 		"maximumExtraDataSize": "0x20",
 		"gasLimitBoundDivisor": "0x0400",
